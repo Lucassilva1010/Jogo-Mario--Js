@@ -1,0 +1,76 @@
+/* zerando/resetando o layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* borda do jogo */
+.game-board {
+    border: 1px solid #333;
+    width: 80%;
+    height: 500px;
+    margin: auto;
+    position: relative;
+    /* sumir os elementos que estão foram da borda */
+    overflow: hidden;
+}
+
+/* configurações do tubo */
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    /* mexe o tubo */
+    /* right: 5%; */
+    animation: animacao-pipe 2s infinite linear;
+}
+
+.mario {
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+}
+
+.salto {
+
+    /* faz o mario saltar o tubo, isso de acordo com a logica criada no JS */
+    animation: salto 700ms infinite ease-out;
+}
+
+/* criando animações do tubo */
+@keyframes animacao-pipe {
+    from {
+        /* fazendo o tupo surgir da tela,
+    para que ele não apareça do nada */
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+/* Animação do Pulo do mario */
+@keyframes salto {
+
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
