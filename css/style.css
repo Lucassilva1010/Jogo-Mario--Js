@@ -14,6 +14,7 @@
     position: relative;
     /* sumir os elementos que estão foram da borda */
     overflow: hidden;
+
 }
 
 /* configurações do tubo */
@@ -24,6 +25,9 @@
     /* mexe o tubo */
     /* right: 5%; */
     animation: animacao-pipe 2s infinite linear;
+
+
+
 }
 
 .mario {
@@ -34,8 +38,8 @@
 
 .salto {
 
+    animation: salto 700ms ease-out;
     /* faz o mario saltar o tubo, isso de acordo com a logica criada no JS */
-    animation: salto 700ms infinite ease-out;
 }
 
 /* criando animações do tubo */
