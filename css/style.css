@@ -7,13 +7,16 @@
 
 /* borda do jogo */
 .game-board {
-    border: 1px solid #333;
-    width: 80%;
+    border-bottom: 15px solid rgb(35, 160, 35);
+    width: 100%;
     height: 500px;
     margin: auto;
     position: relative;
     /* sumir os elementos que estão foram da borda */
     overflow: hidden;
+    /* criando a paisagem de fundo */
+
+    background: linear-gradient(#87ceeb, #e0f6ff);
 
 }
 
@@ -25,8 +28,6 @@
     /* mexe o tubo */
     /* right: 5%; */
     animation: animacao-pipe 2s infinite linear;
-
-
 
 }
 
@@ -40,6 +41,12 @@
 
     animation: salto 700ms ease-out;
     /* faz o mario saltar o tubo, isso de acordo com a logica criada no JS */
+}
+
+.nuvens {
+    position: absolute;
+    width: 550px;
+    animation: nuvens-animations 20s infinite linear;
 }
 
 /* criando animações do tubo */
@@ -76,5 +83,16 @@
 
     100% {
         bottom: 0;
+    }
+}
+
+/*animações das nuvens */
+@keyframes nuvens-animations {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
     }
 }

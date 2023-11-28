@@ -20,15 +20,24 @@ const loop = setInterval(() => {
     // Buscando o valor do Buttom do mario
     //Foi rocado o valor de PX por espaço em branco
     //Foi tranformado para Numero usando apenas o +
-    const puloMario = +window.getComputedStyle(mario).bottom.replace('px', ' ');
+    const puloMario = +window.getComputedStyle(mario).bottom.replace('px', '');
 
     // Verificnado se aposição chegou ao tamanho definido no css
-    if (posicaoTubo <= 120 && puloMario < 80 && posicaoTubo > 0) {
+    //Analisa a possição do tubo
+    //analisa tmabém a possibilidade de o mario ter passado do tubo
+    if (posicaoTubo <= 120 && posicaoTubo > 0 && puloMario < 80) {
+        //Para o jogo e pausa a execução do tubo
         pipe.style.animation = 'none';
-        pipe.style.left = `${posicaoTubo}px`
+        pipe.style.left = `${posicaoTubo}px`;
+        //Para o jogo e pausa a execução do mario
+        mario.style.animation = 'none';
+        mario.style.bottom = `${puloMario}px`;
 
+        //Mudando a imagem do mario quando der Game oVER
+        mario.src = 'imagens/game-over.png';
+        clearInterval(loop);
     }
-    console.logo("Finalizou")
+
 
 }, 10);
 
